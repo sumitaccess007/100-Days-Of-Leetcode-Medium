@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 /**
@@ -45,45 +47,64 @@ public class TopKFrequentElements_Optimized {
 		System.out.println("Elements of HashMap are  :- ");
 		printHashMap(freqMap);
 		
-		System.out.println("Sorting HashMap based on Calue (In Desc Order) :- ");
-		Map<Integer, Integer> sortedMap = sortHashMap(freqMap);
-		
-		System.out.println("Printing Sorted HashMap :- ");
-		printHashMap(sortedMap);
-		
-		Object[] topKFreqArray = null;
-		topKFreqArray = convertMapToArray(sortedMap, topKFreqArray);
-		
-		System.out.println("Top " + k + " frequent elements are - ");
-		for(int i=0; i<k; i++){
-			System.out.print(topKFreqArray[i] + "\t");
-		}
-	}
-
-	private static Object[] convertMapToArray(Map<Integer, Integer> sortedMap, Object[] topKFreqArray) {
-		return sortedMap.keySet().toArray();
-	}
-
-	private static Map<Integer, Integer> sortHashMap(Map<Integer, Integer> freqMap) {
-		List<Entry<Integer, Integer>> list = new ArrayList<Map.Entry<Integer,Integer>>();
-		for(Entry<Integer, Integer> entry : freqMap.entrySet()){
-			list.add(entry);
-		}
-		
-		Collections.sort(list, new Comparator<Entry<Integer, Integer>>() {
+		System.out.println("Create Priority Queue (i.e. Min Heap) of Size" + k + " :- ");
+		PriorityQueue<Map.Entry<Integer, Integer>> minHeap = new PriorityQueue<>(new Comparator<Map.Entry<Integer, Integer>>() {
 			@Override
 			public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
-				return o2.getValue().compareTo(o1.getValue());
+				return o1.getValue() - o2.getValue();
 			}
 		});
 		
-		Map<Integer, Integer> sortedHashMap = new LinkedHashMap<>();
-		for(Entry<Integer, Integer> entry : list){
-			sortedHashMap.put(entry.getKey(), entry.getValue());
+		System.out.println("Store in MinHeap :- ");
+		buildMinHeap(minHeap, freqMap, k);
+		
+		System.out.println("Print MinHeap :-");
+		printMinHeap(minHeap);
+		
+
+		
+		System.out.println("Store MinHeap in array of size " + k + " - ");
+		int[] topKFreElement = new int[k];
+		topKFreElement = storeMinHeapInArray(topKFreElement, minHeap, k);
+		
+		System.out.println("Top " + k + " frequent elemts are - ");
+		printArrayElements(n, topKFreElement);
+	}
+
+
+
+	private static int[] storeMinHeapInArray(int[] topKFreElement, PriorityQueue<Entry<Integer, Integer>> minHeap,
+			int k) {
+		int[] result = new int[k];
+		for(int i=0; i<k; i++){
+			result[i] = minHeap.poll().getKey();
+		}
+		return result;
+	}
+
+
+
+	private static void printMinHeap(PriorityQueue<Entry<Integer, Integer>> minHeap) {
+		Iterator<Map.Entry<Integer, Integer>> iterator = minHeap.iterator();
+		while(iterator.hasNext()){
+			System.out.println(iterator.next());
 		}
 		
-		return sortedHashMap;
 	}
+
+
+
+	private static void buildMinHeap(PriorityQueue<Entry<Integer, Integer>> minHeap, Map<Integer, Integer> freqMap,
+			int k) {
+		for(Entry<Integer, Integer> entry : freqMap.entrySet()){
+			minHeap.add(entry);
+			if(minHeap.size() > k){
+				minHeap.poll();
+			}
+		}
+	}
+
+
 
 	private static void printHashMap(Map<Integer, Integer> freqMap) {
 		for(Entry<Integer, Integer> entry : freqMap.entrySet()){
