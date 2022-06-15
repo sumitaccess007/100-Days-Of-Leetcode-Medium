@@ -4,15 +4,16 @@ import java.util.Scanner;
 
 /**
 * Maximum Sum Circular Sub-Array - BruteForce Implementation
-* STEP-1 => Applied Kadane's Algorithm => To find Max Sum SubArray [No-Warp Around CASE]
-* STEP-2 => Applied Kadane's Algorithm => To find Min Sum SubArray [Warp Around CASE]
-* STEP-3 => Total Sum of Array - Min Sum SubArray
+* STEP-1 => Applied Kadane's Algorithm => To find Max Sum SubArray
+* STEP-2 => Invert Sign of Array Elements
+* STEP-2 => Applied Kadane's Algorithm => To find Max Sum SubArray
+* STEP-3 => Total Sum of Array + Max Sum SubArray
 * STEP-4 => Return Max of (STEP-1, STEP-3)
 * @author  Sumit Sharma
 * @version 1.0
 */
 
-public class MaxSumCircularSubArray_Optimized {
+public class MaxSumCircularSubArray_BruteForce3 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -37,26 +38,28 @@ public class MaxSumCircularSubArray_Optimized {
 	}
 
 	private static int calculateMaxSumSubArray(int[] nums, int numOfElements) {
+		int totalSum = 0;
+		int maxSumOfOriginal = kadaneAlgorithm(nums);
+		for(int i=0; i<numOfElements; i++){
+			totalSum = totalSum + nums[i];
+			nums[i] = -nums[i];
+		}
+		int maxSumOfInverted = kadaneAlgorithm(nums);
+		if(totalSum + maxSumOfInverted == 0){
+			return maxSumOfOriginal;
+		}
+		return Math.max(maxSumOfOriginal, totalSum + maxSumOfInverted);
+	}
+
+	private static int kadaneAlgorithm(int[] nums) {
 		int curBest = nums[0];
 		int overallBest = nums[0];
-		int curWorst = nums[0];
-		int overallWorst = nums[0];
-		int totalSum = nums[0];
-		
-		for(int i=1; i<numOfElements; i++){
-			totalSum = totalSum + nums[i];
+		for(int i=1; i<nums.length; i++){
+			curBest = Math.max(curBest + nums[i], nums[i]);
+			overallBest = Math.max(curBest, overallBest);
 			
-			curBest = Math.max(nums[i], curBest + nums[i]);
-			overallBest = Math.max(overallBest, curBest);
-			
-			curWorst = Math.min(nums[i], curWorst + nums[i]);
-			overallWorst = Math.min(overallWorst, curWorst);
 		}
-		if(overallWorst == totalSum){
-			return overallBest;
-		}
-		
-		return Math.max(overallBest, totalSum-overallWorst);
+		return overallBest;
 	}
 
 	private static void printArrayElements(int[] nums) {
