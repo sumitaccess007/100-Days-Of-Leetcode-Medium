@@ -1,5 +1,7 @@
 package com.sumitaccess007.ContinuousSubarraySum_008;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ContinuousSubarraySum_Optimized {
@@ -28,16 +30,30 @@ public class ContinuousSubarraySum_Optimized {
 	}
 
 	private static boolean getContinuousSubarraySum(int[] nums, int k) {
-		boolean result = false;
-		for(int i=0; i<nums.length; i++){
-			for(int j=i+1; j<nums.length; j++){
-				if((nums[i] + nums[j]) % k == 0){
-					result = true;
-					break;
+		Map<Integer, Integer> remainderMap = new HashMap<>();
+		
+		remainderMap.put(0, -1);
+		int runningSum = 0;
+		int minLen = 2;
+		
+		for(int index=0; index<nums.length; index++){
+			runningSum = runningSum + nums[index];
+			if(k != 0){
+				runningSum = runningSum % k;
+			}
+			if(remainderMap.containsKey(runningSum)){
+				if((index - remainderMap.get(runningSum)) > minLen){
+					System.out.println("RunningSum is :- " + runningSum);
+					System.out.println("From HashMap :- " + remainderMap.get(runningSum));
+					System.out.println("Index is :- " + index);
+					return true;
 				}
+			} else {
+				remainderMap.put(runningSum, index);
 			}
 		}
-		return result;
+		return false;
+
 	}
 
 	private static void printArrayElements(int[] nums) {
