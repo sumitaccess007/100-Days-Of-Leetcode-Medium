@@ -10,4 +10,5 @@ Leetcode Medium Level Problems - 100 Days Challenge
 | 005    | [Rotate Image - 2D Array](https://leetcode.com/problems/rotate-image/) | [Solution](src/main/java/com/sumitaccess007/RotateImage_005)  |
 | 006    | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | [Solution](src/main/java/com/sumitaccess007/TopKFrequentElements_006)  |
 | 007    | [Maximum Sum Circular Sub-Array](https://leetcode.com/problems/maximum-sum-circular-subarray/) | [Solution](src/main/java/com/sumitaccess007/MaxSumCircularSubArray_007)  |
-| 008    | [Maximum Sum Circular Sub-Array](https://leetcode.com/problems/maximum-sum-circular-subarray/) | [Solution](src/main/java/com/sumitaccess007/MaxSumCircularSubArray_007)  |
+| 008    | [Continuous Sub-Array Sum](https://leetcode.com/problems/continuous-subarray-sum/) | [Solution](src/main/java/com/sumitaccess007/ContinuousSubarraySum_008)  |
+| 009    | [Problem-9](https://leetcode.com/problems/maximum-sum-circular-subarray/) | [Solution](src/main/java/com/sumitaccess007/ContinuousSubarraySum_008)  |
