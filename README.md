@@ -1,4 +1,8 @@
-# 100-Days-Of-Leetcode-Medium
+- [100-Days-Of-Leetcode-Medium](#100-days-of-leetcode-medium)
+- [450-Questions-DSA-Sheet](#450-questions-dsa-sheet)
+
+
+## 100-Days-Of-Leetcode-Medium
 Leetcode Medium Level Problems - 100 Days Challenge
 
 | N°     | Problem Name      | Solution |
@@ -24,7 +28,8 @@ Leetcode Medium Level Problems - 100 Days Challenge
 | 019    | [Shell Sort & Its Problems](https://www.geeksforgeeks.org/shellsort/) | [Solution](src/main/java/com/sumitaccess007/ShellSort_019)  |
 
 
-
+</br>
+## 450-Questions-DSA-Sheet
 450 Questions DSA Sheet - Love Babbar
 
 | N°     | Problem Name      | Topic    | Solution |
@@ -38,7 +43,7 @@ Leetcode Medium Level Problems - 100 Days Challenge
 | 007    | [Maximum Sum Circular Sub-Array](https://leetcode.com/problems/maximum-sum-circular-subarray/) | Array | [Solution](src/main/java/com/sumitaccess007/MaxSumCircularSubArray_007)  |
 | 008    | [Continuous Sub-Array Sum](https://leetcode.com/problems/continuous-subarray-sum/) | Array | [Solution](src/main/java/com/sumitaccess007/ContinuousSubarraySum_008)  |
 | 009    | [Selection Sort & Its Problems](https://www.geeksforgeeks.org/selection-sort/) | Array | [Solution](src/main/java/com/sumitaccess007/SelectionSort_009)  |
-| 010    | [Bubble Sort & Its Problems](https://www.geeksforgeeks.org/bubble-sort/) | [Solution](src/main/java/com/sumitaccess007/BubbleSort_010)  |
+| 010    | [Bubble Sort & Its Problems](https://www.geeksforgeeks.org/bubble-sort/) | Array | [Solution](src/main/java/com/sumitaccess007/BubbleSort_010)  |
 | 011    | [Insertion Sort & Its Problems](https://www.geeksforgeeks.org/insertion-sort/) | Array | [Solution](src/main/java/com/sumitaccess007/InsertionSort_011)  |
 | 012    | [Merge Sort & Its Problems](https://www.geeksforgeeks.org/merge-sort/) | Array | [Solution](src/main/java/com/sumitaccess007/MergeSort_012)  |
 | 013    | [Quick Sort & Its Problems](https://www.geeksforgeeks.org/quick-sort/) | Array | [Solution](src/main/java/com/sumitaccess007/QuickSort_013)  |
