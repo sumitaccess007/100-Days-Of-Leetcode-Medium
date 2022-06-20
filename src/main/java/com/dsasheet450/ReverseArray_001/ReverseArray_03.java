@@ -1,4 +1,4 @@
-package com.dsasheet450_ReverseArray_001;
+package com.dsasheet450.ReverseArray_001;
 
 import java.util.Scanner;
 
