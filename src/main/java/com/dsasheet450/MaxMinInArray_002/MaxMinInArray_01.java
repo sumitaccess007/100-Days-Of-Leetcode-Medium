@@ -1,20 +1,17 @@
-package com.dsasheet450.ReverseArray_001;
+package com.dsasheet450.MaxMinInArray_002;
 
 import java.util.Scanner;
 
 /**
-* Array - Reverse Array - 002
-* Implemented solution is In-place
-* Implemented solution is also stable
-* The solution is implemented using two pointers
+* Array - Max and Min of an Array - With Minimum Comparsions - 002
 * - Time Complexity - O(N)
-* - Space Complexity - O(1)
+* - Space Complexity -
 * @author  Sumit Sharma
 * @version 1.0
 */
 
 
-public class ReverseArray_02 {
+public class MaxMinInArray_01 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -37,16 +34,12 @@ public class ReverseArray_02 {
 	
 	public static void reverseArray(int[] nums){
 		System.out.println("Reversing Array - ");
-		int start = 0;
-		int end = nums.length-1;
-		while(start < end){
-			if(nums[start] != nums[end]){
-				int temp = nums[start];
-				nums[start] = nums[end];
-				nums[end] = temp;
+		for(int i=0; i<nums.length/2; i++){
+			if(nums[i] != nums[nums.length-1-i]){
+				int temp = nums[nums.length-1-i];
+				nums[nums.length-1-i] = nums[i];
+				nums[i] = temp;
 			}
-			start++;
-			end--;
 		}
 	}
 	

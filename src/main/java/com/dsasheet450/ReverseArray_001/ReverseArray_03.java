@@ -8,7 +8,7 @@ import java.util.Scanner;
 * Implemented solution is also stable
 * The solution is implemented using two pointers - Recursive Solution
 * - Time Complexity - O(N)
-* - Space Complexity
+* - Space Complexity - O(1)
 * @author  Sumit Sharma
 * @version 1.0
 */

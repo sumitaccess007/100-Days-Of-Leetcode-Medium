@@ -7,7 +7,7 @@ import java.util.Scanner;
 * Implemented solution is In-place
 * Implemented solution is also stable
 * - Time Complexity - O(N)
-* - Space Complexity
+* - Space Complexity - O(1)
 * @author  Sumit Sharma
 * @version 1.0
 */
