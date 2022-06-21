@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
 * Array - Max and Min of an Array - With Minimum Comparsions - 002
+* - Tournament Method - Divide Array in Two Parts and get Max, Min of each of the parts
 * - Time Complexity - O(N)
 * - Space Complexity - O(1)
 * - Best Case - When Ascending Array - 1+(n-2) Comparsions
@@ -13,7 +14,7 @@ import java.util.Scanner;
 */
 
 
-public class MaxMinInArray_01 {
+public class MaxMinInArray_02 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -26,44 +27,63 @@ public class MaxMinInArray_01 {
 		for(int i=0; i<numOfElements; i++){
 			nums[i] = scanner.nextInt();
 		}
-		
-		Pair pair = new Pair();
 
 		printArrayElements(nums);
 		
-		Pair minmax = getMinMaxInArray(nums, pair);
+		Pair minmax = getMinMaxInArray(nums, 0, nums.length-1);
 		
 		System.out.println("Minimum Element is - " + minmax.min);
 		System.out.println("Maximum Element is - " + minmax.max);
 		
 	}
 	
-	private static Pair getMinMaxInArray(int[] nums, Pair pair) {
+	private static Pair getMinMaxInArray(int[] nums, int low, int high) {
+		Pair pair = new Pair();
+		Pair leftHalf = new Pair();
+		Pair rightHalf = new Pair();
+		int mid;
+
 		// If Array contains only one element
-		if(nums.length == 1){
-			pair.min = nums[0];
-			pair.max = nums[0];
+		if(low == high){
+			pair.min = nums[low];
+			pair.max = nums[low];
 			return pair;
 		}
 		
-		// If array contains more than one element
-		if(nums[0] < nums[1]){
-			pair.min = nums[0];
-			pair.max = nums[1];
-		} else {
-			pair.min = nums[1];
-			pair.max = nums[0];
+		// If Array contains two elements
+		if(high == low + 1){
+			if(nums[low] < nums[high]){
+				pair.min = nums[low];
+				pair.max = nums[high];
+			} else {
+				pair.min = nums[high];
+				pair.max = nums[low];
+			}
+			return pair;
 		}
 		
-		for(int i=2; i<nums.length; i++){
-			if(nums[i] > pair.max){
-				pair.max = nums[i];
-			} else if(nums[i] < pair.min){
-				pair.min = nums[i];
-			}
+		// If array contains more than two element
+		mid = (low + high) / 2;
+		leftHalf = getMinMaxInArray(nums, low, mid);
+		rightHalf = getMinMaxInArray(nums, mid+1, high);
+		
+		// Compare minimums of two half
+		if(leftHalf.min < rightHalf.min){
+			pair.min = leftHalf.min;
+		} else {
+			pair.min = rightHalf.min;
 		}
+
+		// Compare maximums of two half
+		if(leftHalf.max < rightHalf.max){
+			pair.max = rightHalf.max;
+		} else {
+			pair.max = leftHalf.max;
+		}
+		
 		return pair;
 	}
+
 
 	public static void printArrayElements(int[] nums){
 		System.out.println("Array Elements are - ");
@@ -72,7 +92,8 @@ public class MaxMinInArray_01 {
 		}
 		System.out.println();
 	}
-	
+
+
 	public static class Pair{
 		int min;
 		int max;

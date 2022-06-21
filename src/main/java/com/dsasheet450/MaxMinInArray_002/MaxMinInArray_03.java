@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
 * Array - Max and Min of an Array - With Minimum Comparsions - 002
+* - Tournament Method
 * - Time Complexity - O(N)
 * - Space Complexity - O(1)
 * - Best Case - When Ascending Array - 1+(n-2) Comparsions
@@ -13,7 +14,7 @@ import java.util.Scanner;
 */
 
 
-public class MaxMinInArray_01 {
+public class MaxMinInArray_03 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
