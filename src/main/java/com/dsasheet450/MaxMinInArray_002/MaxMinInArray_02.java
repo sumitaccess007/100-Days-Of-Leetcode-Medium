@@ -6,9 +6,9 @@ import java.util.Scanner;
 * Array - Max and Min of an Array - With Minimum Comparsions - 002
 * - Tournament Method - Divide Array in Two Parts and get Max, Min of each of the parts
 * - Time Complexity - O(N)
-* - Space Complexity - O(1)
-* - Best Case - When Ascending Array - 1+(n-2) Comparsions
-* - Worst Case - When Descending Array - 1+2(n-2) Comparsions
+* - Space Complexity - O(logn) - Because of recursive calls
+* - Number of Comparsions -
+* - T(n) = 2T(n/2) + 2 => 3n/2 - 2
 * @author  Sumit Sharma
 * @version 1.0
 */
