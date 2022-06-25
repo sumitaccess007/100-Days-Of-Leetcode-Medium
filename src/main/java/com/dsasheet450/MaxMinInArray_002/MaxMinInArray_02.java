@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
 * Array - Max and Min of an Array - With Minimum Comparsions - 002
 * - Tournament Method - Divide Array in Two Parts and get Max, Min of each of the parts
+* - Algorithm Technique - Divide And Conquer
 * - Time Complexity - O(N)
 * - Space Complexity - O(logn) - Because of recursive calls
 * - Number of Comparsions -

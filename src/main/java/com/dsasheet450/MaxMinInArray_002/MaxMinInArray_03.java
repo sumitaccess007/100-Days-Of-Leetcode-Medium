@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
 * Array - Max and Min of an Array - With Minimum Comparsions - 002
-* - Tournament Method
+* - Compare In Pairs
 * - Time Complexity - O(N)
 * - Space Complexity - O(1)
 * - Best Case - When Ascending Array - 1+(n-2) Comparsions
@@ -27,41 +27,54 @@ public class MaxMinInArray_03 {
 		for(int i=0; i<numOfElements; i++){
 			nums[i] = scanner.nextInt();
 		}
-		
+
 		Pair pair = new Pair();
 
 		printArrayElements(nums);
-		
+
 		Pair minmax = getMinMaxInArray(nums, pair);
-		
+
 		System.out.println("Minimum Element is - " + minmax.min);
 		System.out.println("Maximum Element is - " + minmax.max);
 		
 	}
 	
 	private static Pair getMinMaxInArray(int[] nums, Pair pair) {
-		// If Array contains only one element
-		if(nums.length == 1){
-			pair.min = nums[0];
-			pair.max = nums[0];
-			return pair;
-		}
-		
-		// If array contains more than one element
-		if(nums[0] < nums[1]){
+		int i;
+
+		// If  num of elements are odd
+		if(nums.length % 2 != 0){
 			pair.min = nums[0];
 			pair.max = nums[1];
+			i = 1;
 		} else {
-			pair.min = nums[1];
-			pair.max = nums[0];
+			if(nums[0] < nums[1]){
+				pair.min = nums[0];
+				pair.max = nums[1];
+			} else {
+				pair.min = nums[1];
+				pair.max = nums[0];
+			}
+			i = 2;
 		}
 		
-		for(int i=2; i<nums.length; i++){
-			if(nums[i] > pair.max){
-				pair.max = nums[i];
-			} else if(nums[i] < pair.min){
-				pair.min = nums[i];
+		while(i < nums.length - 1){
+			if(nums[i] > nums[i+1]){
+				if(nums[i] > pair.max){
+					pair.max = nums[i];
+				}
+				if(nums[i+1] < pair.min){
+					pair.min = nums[i+1];
+				}
+			} else {
+				if(nums[i] < pair.min){
+					pair.min = nums[i];
+				}
+				if(nums[i+1] > pair.max){
+					pair.max = nums[i+1];
+				}
 			}
+			i += 2;
 		}
 		return pair;
 	}
