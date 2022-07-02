@@ -47,8 +47,8 @@ public class StackImplementationUsingArray {
 				System.exit(0);
 				break;
 			default:
-				System.out.println("This is not a valid stack operation. Please choose another.");
-				break;
+				System.out.println(choice + " is not a valid stack operation. Please choose another.");
+				choice = 0;
 			}
 		}
 
@@ -57,11 +57,12 @@ public class StackImplementationUsingArray {
 	public static class CustomStack {
 		Scanner scanner = new Scanner(System.in);
 		public static final int DEFAULT_CAPCACITY = 6;
-		int[] stack = new int[DEFAULT_CAPCACITY];
+		int[] stack;
 		int top;
 
 		public CustomStack() {
 			top = -1;
+			stack = new int[DEFAULT_CAPCACITY];
 		}
 
 		public void push() {
