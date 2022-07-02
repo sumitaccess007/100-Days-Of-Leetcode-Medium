@@ -7,8 +7,8 @@ import java.util.Scanner;
 * - Compare In Pairs
 * - Time Complexity - O(N)
 * - Space Complexity - O(1)
-* - Best Case - When Ascending Array - 1+(n-2) Comparsions
-* - Worst Case - When Descending Array - 1+2(n-2) Comparsions
+* - #n = Odd - 3(n-1)/2 Comparsions
+* - #n = Even - 3n/2 - 2 Comparsions
 * @author  Sumit Sharma
 * @version 1.0
 */
