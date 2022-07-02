@@ -27,6 +27,8 @@ Leetcode Medium Level Problems - 100 Days Challenge
 | 017    | [Bucket Sort & Its Problems](https://www.geeksforgeeks.org/bucket-sort-2/) | [Solution](src/main/java/com/sumitaccess007/BucketSort_017)  |
 | 018    | [Comb Sort & Its Problems](https://www.geeksforgeeks.org/comb-sort/) | [Solution](src/main/java/com/sumitaccess007/CombSort_018)  |
 | 019    | [Shell Sort & Its Problems](https://www.geeksforgeeks.org/shellsort/) | [Solution](src/main/java/com/sumitaccess007/ShellSort_019)  |
+| 020    | [Stack Implementation](https://www.geeksforgeeks.org/stack-data-structure-introduction-program/) | [Solution](src/main/java/com/sumitaccess007/StackImplementation_020)  |
+
 
 
 </br>
