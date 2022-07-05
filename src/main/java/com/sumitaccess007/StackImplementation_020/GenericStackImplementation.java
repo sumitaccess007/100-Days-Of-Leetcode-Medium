@@ -3,6 +3,13 @@ package com.sumitaccess007.StackImplementation_020;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+* StackImplementation - Generic Implementation
+* ArrayList Implementation
+* @author  Sumit Sharma
+* @version 1.0
+*/
+
 public class GenericStackImplementation {
 
 	public static class CustomStack<T>{

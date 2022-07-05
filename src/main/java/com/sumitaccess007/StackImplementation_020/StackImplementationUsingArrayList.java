@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+* StackImplementation - Using ArrayList
+* @author  Sumit Sharma
+* @version 1.0
+*/
+
 public class StackImplementationUsingArrayList {
 
 	public static void main(String[] args) {

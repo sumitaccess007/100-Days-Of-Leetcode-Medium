@@ -1,7 +1,12 @@
 package com.sumitaccess007.StackImplementation_020;
 
 import java.util.Scanner;
-
+/**
+* StackImplementation - Using Array
+* Array Implementation - is not dynamic. It does not grow and shrink depending on needs at runtime.
+* @author  Sumit Sharma
+* @version 1.0
+*/
 public class StackImplementationUsingArray {
 
 	public static void main(String[] args) {
