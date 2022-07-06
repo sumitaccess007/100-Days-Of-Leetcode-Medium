@@ -66,19 +66,20 @@ public class StackImplementationUsingLinkedList {
 		}
 	}
 
-	static class Node{
-		int data;
-		Node next;
+	private static class Node{
+		private int data;
+		private Node next;
 		
 		Node(int data){
 			this.data = data;
+			this.next = null;
 		}
 	}
 	
 	static class CustomStack{
 		Scanner scanner = new Scanner(System.in);
-		Node top;
-		int size;
+		private Node top;
+		private int size;
 		
 		CustomStack() {
 			this.top = null;
