@@ -67,7 +67,6 @@ public class QueueImplementationUsingArray {
 				break;
 			}
 		}
-
 	}
 
 	public static class CustomQueue {
