@@ -1,7 +1,17 @@
 package com.sumitaccess007.QueueImplementation_021;
 
 import java.util.Scanner;
-
+/**
+ * QueueImplementation - Using Singly LinkedList
+ * Enqueuing - at REAR End (or tail)
+ * Dequeuing - at FRONT End (or head)
+ * 
+ * Time and Space Complexity -
+ * - Enqueue() and Dequeue() - O(1)
+ * 
+ * @author Sumit Sharma
+ * @version 1.0
+ */
 
 public class QueueImplementationUsingLinkedList {
 

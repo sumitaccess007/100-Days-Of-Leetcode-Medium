@@ -5,16 +5,17 @@ import java.util.Scanner;
 /**
  * QueueImplementation - Using Array Array Implementation - is not dynamic. It
  * does not grow and shrink depending on needs at runtime. Also it is not space
- * optimized. We can implement it in Circular Array Fashion. Insert - happens at
- * REAR End (Increment REAR and Write New Value) Delete - happens at FRONT End
- * (Read Value at FRONT and Increment FRONT) Empty Queue - is represented by
- * setting FRONT and REAR to -1
+ * optimized. We can implement it in Circular Array Fashion.
  * 
- * Real Life Usage - 1. BFS Uses a Queue to keep track of nodes to visit next 2.
- * Printers uses Queue to manage jobs - jobs are printed in the order they
- * submitted 3. Web Servers uses Queue to manage requests - page requests get
- * fulfilled in the order they received 4. Processes wait in the CPU Scheduler's
- * Queue for their turn to run
+ * Insert - happens at REAR End (or tail) (Increment REAR and Write New Value)
+ * Delete - happens at FRONT End (or head) (Read Value at FRONT and Increment FRONT)
+ * Empty Queue - is represented by setting FRONT and REAR to -1
+ * 
+ * Real Life Usage -
+ * 1. BFS Uses a Queue to keep track of nodes to visit next
+ * 2. Printers uses Queue to manage jobs - jobs are printed in the order they submitted
+ * 3. Web Servers uses Queue to manage requests - page requests get fulfilled in the order they received
+ * 4. Processes wait in the CPU Scheduler's Queue for their turn to run
  * 
  * @author Sumit Sharma
  * @version 1.0
