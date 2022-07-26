@@ -28,6 +28,7 @@ Leetcode Medium Level Problems - 100 Days Challenge
 | 018    | [Comb Sort & Its Problems](https://www.geeksforgeeks.org/comb-sort/) | [Solution](src/main/java/com/sumitaccess007/CombSort_018)  |
 | 019    | [Shell Sort & Its Problems](https://www.geeksforgeeks.org/shellsort/) | [Solution](src/main/java/com/sumitaccess007/ShellSort_019)  |
 | 020    | [Stack Implementation](https://www.geeksforgeeks.org/stack-data-structure-introduction-program/) | [Solution](src/main/java/com/sumitaccess007/StackImplementation_020)  |
+| 021    | [Queue Implementation](https://www.geeksforgeeks.org/array-implementation-of-queue-simple/) | [Solution](src/main/java/com/sumitaccess007/QueueImplementation_021)  |
 
 
 
